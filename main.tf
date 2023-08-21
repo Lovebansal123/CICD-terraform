@@ -34,7 +34,7 @@ variable "public_key" {
 }
 
 #Resource to Create Key Pair
-resource "aws_key_pair" "demo_key_pair" {
+resource "aws_key_pair" "live_demo_key_pair" {
   key_name   = var.key_pair_name
   public_key = var.public_key
 }
@@ -42,5 +42,5 @@ resource "aws_key_pair" "demo_key_pair" {
 resource "aws_instance" "demo-instance" {
   ami           = "ami-053b0d53c279acc90"
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.demo_key_pair.key_name
+  key_name      = aws_key_pair.live_demo_key_pair.key_name
 }
